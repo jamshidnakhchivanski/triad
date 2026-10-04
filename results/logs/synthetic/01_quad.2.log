@@ -1,0 +1,52 @@
+sample: 262144 bytes; repeat distances: 1024 8 8129 5121 6145 5137
+  no program: 96188 bytes on the sample
+  try X86: 98777
+  try DELTA(4-byte LE, offset 2, stride 256): 12109
+  try DELTA(4-byte LE, offset 1, stride 256): 9782
+  try DELTA(2-byte LE, offset 0, stride 512): 12185
+  try DELTA(4-byte LE, offset 0, stride 256): 9844
+  try DELTA(4-byte LE, offset 0, stride 2): 431
+  try DELTA(4-byte LE, offset 0, stride 2): 431
+  try DELTA(4-byte LE, offset 3, stride 2): 447
+  try DELTA(4-byte LE, offset 3, stride 2): 447
+  step   3: 431 -> 418  ORD4 => AVG(3,8)&E0
+  step   7: 418 -> 399  ORD8 => COL2
+  step  13: 399 -> 358  ORD6 => ORD2+B6&DF
+  step  20: 358 -> 333  match length => 32
+  step  23: 333 -> 330  ORD5 => B1023
+  step  25: 330 -> 314  ORD3 => AVG(1,8177)
+  step  28: 314 -> 314  B2+B3 => B2+B3/10
+  step  35: 314 -> 312  B2+B3/10 => B3/10
+  step  36: 312 -> 311  B1+B3 => B1
+  step  41: 311 -> 311  mixer select => B1+AVG(4,2)&C0
+  step  46: 311 -> 302  COL2 => COL2/3
+  step  48: 302 -> 301  ORD1 => ORD1/5
+  step  52: 301 -> 301  correction => B2+B8185+B1017&F0
+  step  54: 301 -> 301  ORD2+B6&DF => AVG(4,2045)+ORD5
+  step  62: 301 -> 300  B1+WORD2 => ORD1+WORD/5
+  step  66: 300 -> 294  ORD1+WORD/5 => B8185&F0/5
+  step  69: 294 -> 289  mixer select => B6
+  step  73: 289 -> 288  correction => B2+B1025&C0+B1017&F0
+  step  88: 288 -> 287  B1023 => B1017&FC
+  step  89: 287 -> 286  AVG(1,8177) => ORD6+AVG(3,4)
+  step  96: 286 -> 283  WORD+WORD2 => COL2+COL8/3
+  step 113: 283 -> 276  COL2/3 => B2/3
+  step 117: 276 -> 276  ORD12 => ORD12/7
+  step 127: 276 -> 275  ORD2 => ORD2/3
+  step 134: 275 -> 275  B3/10 => ORD1/10
+  step 138: 275 -> 274  B2/3 => B2+B6/3
+  prune ORD12/7: 274 -> 274
+  prune ORD0: 274 -> 272
+  prune B1: 272 -> 268
+  prune ORD1/10: 268 -> 265
+  prune WORD: 265 -> 263
+  prune B2+B6/3: 263 -> 259
+  prune AVG(4,2045)+ORD5: 259 -> 256
+  prune B1017&FC: 256 -> 255
+  prune AVG(3,8)&E0: 255 -> 255
+  prune ORD6+AVG(3,4): 255 -> 253
+search: 139 evaluations, 35.0 s
+program : DELTA(4-byte LE, offset 1, stride 256) DELTA(4-byte LE, offset 0, stride 2)
+contexts: ORD1/5 ORD2/3 COL2+COL8/3 B8185&F0/5
+mixer select: B6   correction: B2+B1025&C0+B1017&F0   match length: 32
+1600000 -> 783 bytes (0.004 bits/byte), 36.3 s

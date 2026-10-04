@@ -1,0 +1,39 @@
+sample: 262144 bytes; repeat distances: 313 141 172 105 208 418
+  no program: 423 bytes on the sample
+  try DELTA(1-byte LE, offset 0, stride 313): 913
+  step   2: 423 -> 414  ORD6 => ORD16
+  step   3: 414 -> 390  ORD4 => AVG(3,313)&E0
+  step   4: 390 -> 386  ORD3 => B2+B3+ORD12
+  step   7: 386 -> 364  ORD8 => COL2
+  step  20: 364 -> 354  match length => 32
+  step  21: 354 -> 354  B2+B3+ORD12 => B2+B3+ORD12+WORD2
+  step  27: 354 -> 348  WORD+WORD2 => WORD+WORD2+UP2
+  step  29: 348 -> 348  WORD+WORD2+UP2 => WORD+B3&FC+WORD2
+  step  32: 348 -> 344  COL2 => ORD5+B282
+  step  40: 344 -> 343  B1+WORD2 => B1+WORD2+B8
+  step  42: 343 -> 343  B1+B3 => B7&DF+B141
+  step  52: 343 -> 343  correction => B2+B141+B105&F0
+  step 102: 343 -> 342  B7&DF+B141 => B7&DF+B141+WORD
+  step 123: 342 -> 342  B7&DF+B141+WORD => B7&DF+B141+WORD+UP1
+  step 162: 342 -> 342  ORD5+B282 => ORD5+COL313
+  step 202: 342 -> 340  B2+B3+ORD12+WORD2 => B1&E0+AVG(1,7)&E0
+  step 213: 340 -> 339  match length => 6
+  step 218: 339 -> 339  AVG(3,313)&E0 => AVG(3,313)&E0/3
+  step 236: 339 -> 318  WORD => B835
+  step 255: 318 -> 318  ORD0 => B836
+  step 270: 318 -> 318  B835 => B835+AVG(3,172)&E0
+  step 273: 318 -> 317  B2+B3 => B2+B3/3
+  step 278: 317 -> 317  match length => 5
+  step 300: 317 -> 317  B1+WORD2+B8 => B1+WORD2+B8+GRAD(3,5)
+  step 336: 317 -> 316  B1&E0+AVG(1,7)&E0 => B1&E0+B2&0F
+  step 356: 316 -> 316  AVG(3,313)&E0/3 => AVG(3,313)&E0/7
+  step 377: 316 -> 315  B835+AVG(3,172)&E0 => B835+AVG(3,172)&E0+AVG(1,2)&C0
+  step 466: 315 -> 315  ORD12 => B3+ORD10
+  prune B3+ORD10: 315 -> 315
+  prune B7&DF+B141+WORD+UP1: 315 -> 315
+  prune ORD5: 315 -> 315
+search: 492 evaluations, 153.9 s
+program : (none)
+contexts: ORD1 ORD2 B1&E0+B2&0F AVG(3,313)&E0/7 ORD16 ORD5+COL313 B835+AVG(3,172)&E0+AVG(1,2)&C0 WORD+B3&FC+WORD2 B2+B3/3 B836 B1+WORD2+B8+GRAD(3,5)
+mixer select: B1   correction: B2+B141+B105&F0   match length: 5
+2000070 -> 1403 bytes (0.006 bits/byte), 156.8 s

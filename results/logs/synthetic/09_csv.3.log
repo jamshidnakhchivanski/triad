@@ -1,0 +1,58 @@
+sample: 262144 bytes; repeat distances: 26 288 314 262 340 236
+  no program: 23785 bytes on the sample
+  try DELTA(1-byte LE, offset 0, stride 26): 36951
+  try DELTA(2-byte BE, offset 0, stride 13): 40820
+  try DELTA(2-byte BE, offset 1, stride 13): 40829
+  try DELTA(2-byte LE, offset 0, stride 13): 40690
+  step   8: 23785 -> 23349  B2+B3 => ORD1+AVG(2,3)&C0+UP2
+  step  13: 23349 -> 23215  ORD6 => ORD2+B6&DF
+  step  27: 23215 -> 23133  WORD+WORD2 => WORD+WORD2+UP2
+  step  40: 23133 -> 22993  B1+WORD2 => B1+WORD2+B8
+  step  41: 22993 -> 22982  mixer select => B1+AVG(4,2)&C0
+  step  46: 22982 -> 22914  ORD8 => ORD8/3
+  step  48: 22914 -> 22902  ORD1 => ORD1/5
+  step  49: 22902 -> 22803  ORD8/3 => LINECOL/3
+  step  58: 22803 -> 22550  ORD3 => ORD3+B26
+  step  60: 22550 -> 22515  mixer select => B1+WORD2+B8+ORD16
+  step  67: 22515 -> 22029  ORD2 => ORD2+B26
+  step  68: 22029 -> 22022  WORD+WORD2+UP2 => WORD+WORD2+UP2+LINECOL
+  step  69: 22022 -> 21885  mixer select => B6
+  step  72: 21885 -> 21634  B1+WORD2+B8 => ORD2+B26+B8
+  step  86: 21634 -> 21623  ORD0 => ORD3+B26+COL26
+  step 109: 21623 -> 21593  ORD3+B26 => AVG(3,4)&C0+B26
+  step 136: 21593 -> 21573  AVG(3,4)&C0+B26 => B261+B26
+  step 142: 21573 -> 21251  ORD2+B26+B8 => B8+B26
+  step 147: 21251 -> 21239  ORD3+B26+COL26 => ORD3+B26
+  step 150: 21239 -> 21092  B1+B3 => B1+B3/3
+  step 163: 21092 -> 20730  B1+B3/3 => B8+B26+B4
+  step 169: 20730 -> 20537  ORD3+B26 => LINECOL+B26
+  step 173: 20537 -> 20355  ORD5 => ORD2+B6&DF+UP0
+  step 177: 20355 -> 20053  ORD2+B26 => UP0+B7+B2
+  step 188: 20053 -> 20045  B261+B26 => B261
+  step 190: 20045 -> 20024  LINECOL/3 => B3/3
+  step 196: 20024 -> 19728  ORD4 => ORD4/5
+  step 198: 19728 -> 19715  ORD2+B6&DF+UP0 => ORD2+UP0
+  step 203: 19715 -> 19695  B8+B26 => B8
+  step 212: 19695 -> 19481  match length => 3
+  step 215: 19481 -> 19424  ORD4/5 => ORD4/3
+  step 216: 19424 -> 19409  ORD12 => ORD6+B5&FC
+  step 229: 19409 -> 19402  ORD1+AVG(2,3)&C0+UP2 => B1+ORD24+COL288
+  step 287: 19402 -> 19392  B8+B26+B4 => B472&C0+WORD2+ORD24
+  step 313: 19392 -> 19274  correction => LINECOL
+  step 336: 19274 -> 19199  mixer select => B6+WORD2
+  step 358: 19199 -> 19188  B8 => ORD10
+  step 376: 19188 -> 19181  ORD1/5 => ORD1
+  step 488: 19181 -> 19076  B472&C0+WORD2+ORD24 => LINECOL+B26+UP0
+  step 505: 19076 -> 19067  LINECOL+B26+UP0 => LINECOL+B26+UP0+WORD
+  step 521: 19067 -> 19036  ORD2+UP0 => ORD4+UP0
+  step 554: 19036 -> 19027  LINECOL+B26 => B26
+  prune B26: 19027 -> 19018
+  prune B1+ORD24+COL288: 19018 -> 19019
+  prune B3/3: 19018 -> 19017
+  prune B261: 19017 -> 19020
+  prune ORD1: 19017 -> 19012
+search: 520 evaluations, 171.2 s
+program : (none)
+contexts: UP0+B7+B2 ORD4/3 ORD4+UP0 ORD2+B6&DF WORD WORD+WORD2+UP2+LINECOL LINECOL+B26+UP0+WORD ORD10 ORD6+B5&FC
+mixer select: B6+WORD2   correction: LINECOL   match length: 3
+1307565 -> 91452 bytes (0.560 bits/byte), 173.4 s

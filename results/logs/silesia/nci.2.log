@@ -1,0 +1,40 @@
+sample: 262144 bytes; repeat distances: 70 9 201 79 82 12
+  no program: 11833 bytes on the sample
+  step   0: 11833 -> 11766  ORD0 => ORD1+B201
+  step   2: 11766 -> 11646  ORD6 => ORD16
+  step   7: 11646 -> 11621  ORD8 => COL2
+  step   8: 11621 -> 11497  B2+B3 => ORD1+AVG(2,3)&C0+UP2
+  step   9: 11497 -> 11386  ORD4 => ORD1+AVG(2,3)&C0+UP2+B83
+  step  10: 11386 -> 11370  match length => 5
+  step  20: 11370 -> 11287  match length => 32
+  step  21: 11287 -> 11170  ORD3 => ORD3+WORD2
+  step  27: 11170 -> 11142  WORD+WORD2 => WORD+WORD2+UP2
+  step  28: 11142 -> 11138  ORD1+AVG(2,3)&C0+UP2 => ORD1+AVG(2,3)&C0+UP2/10
+  step  32: 11138 -> 11019  COL2 => ORD5+B18
+  step  34: 11019 -> 11015  ORD12 => GRAD(3,18)
+  step  35: 11015 -> 11011  ORD1+AVG(2,3)&C0+UP2/10 => ORD1+UP2/10
+  step  39: 11011 -> 10960  ORD1+B201 => ORD1+GRAD(2,8)
+  step  41: 10960 -> 10817  B1+B3 => B7&DF+B9
+  step  47: 10817 -> 10803  ORD1 => ORD1/5
+  step  48: 10803 -> 10355  ORD5+B18 => LINECOL+B18
+  step  53: 10355 -> 9818  ORD5 => UP0+B9
+  step  54: 9818 -> 9809  WORD => B79&80
+  step  59: 9809 -> 9713  ORD2 => ORD4+WORD+B1&E0
+  step  60: 9713 -> 9517  ORD3+WORD2 => ORD3+WORD2+B70
+  step  70: 9517 -> 9366  WORD+WORD2+UP2 => WORD+WORD2+UP2+LINECOL
+  step  71: 9366 -> 9334  mixer select => B6
+  step  74: 9334 -> 9304  B1+WORD2 => ORD4+WORD+B1&E0+B8
+  step  82: 9304 -> 9300  B7&DF+B9 => B7&DF+B9/3
+  step  85: 9300 -> 9146  ORD1+AVG(2,3)&C0+UP2+B83 => ORD1+GRAD(2,8)+ORD24
+  step  88: 9146 -> 9125  match length => 5
+  step  96: 9125 -> 9111  GRAD(3,18) => GRAD(3,18)+B23
+  step  97: 9111 -> 9103  ORD1+GRAD(2,8) => WORD
+  step  99: 9103 -> 9055  GRAD(3,18)+B23 => GRAD(3,18)+B23+ORD3
+  step 115: 9055 -> 9051  match length => 16
+  step 142: 9051 -> 9036  LINECOL+B18 => LINECOL+B18+B6
+  prune B7&DF+B9/3: 9036 -> 9036
+search: 139 evaluations, 43.7 s
+program : (none)
+contexts: ORD1/5 ORD4+WORD+B1&E0 ORD3+WORD2+B70 ORD1+GRAD(2,8)+ORD24 UP0+B9 ORD16 LINECOL+B18+B6 B79&80 WORD+WORD2+UP2+LINECOL ORD1+UP2/10 WORD ORD4+WORD+B1&E0+B8 GRAD(3,18)+B23+ORD3
+mixer select: B6   correction: ORD2   match length: 16
+33553445 -> 1023378 bytes (0.244 bits/byte), 92.9 s

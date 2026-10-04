@@ -1,0 +1,42 @@
+sample: 262144 bytes; repeat distances: 4950 990 198 693 99 616
+  no program: 69926 bytes on the sample
+  step   0: 69926 -> 67097  ORD0 => ORD1+B198
+  step   3: 67097 -> 66696  ORD4 => AVG(3,4950)&E0
+  step   7: 66696 -> 65988  ORD8 => COL2
+  step   8: 65988 -> 61887  B2+B3 => ORD1+AVG(2,3)&C0+UP2
+  step   9: 61887 -> 60702  AVG(3,4950)&E0 => ORD1+AVG(2,3)&C0+UP2+B100
+  step  10: 60702 -> 60489  match length => 5
+  step  11: 60489 -> 60260  B1+WORD2 => B1+WORD2+COL990
+  step  17: 60260 -> 60039  ORD1 => ORD1/10
+  step  27: 60039 -> 59977  WORD+WORD2 => WORD+WORD2+UP2
+  step  33: 59977 -> 59485  WORD+WORD2+UP2 => COL990+B615&0F+B616&F0
+  step  34: 59485 -> 58348  ORD12 => GRAD(3,1980)
+  step  41: 58348 -> 57460  B1+B3 => B7&DF+B990
+  step  43: 57460 -> 57143  WORD => WORD+B198
+  step  45: 57143 -> 57048  COL2 => COL2/3
+  step  47: 57048 -> 56723  ORD1/10 => ORD1/5
+  step  48: 56723 -> 53785  COL2/3 => LINECOL/3
+  step  51: 53785 -> 51807  match length => 3
+  step  53: 51807 -> 42448  ORD5 => UP0+B990
+  step  55: 42448 -> 41271  WORD+B198 => COL4950+B198
+  step  60: 41271 -> 41225  COL990+B615&0F+B616&F0 => ORD5+B615&0F+B616&F0
+  step  61: 41225 -> 41026  ORD1+B198 => B4950+COL99
+  step  62: 41026 -> 40202  ORD1+AVG(2,3)&C0+UP2 => ORD2+AVG(2,3)&C0+UP2
+  step  64: 40202 -> 40179  ORD1+AVG(2,3)&C0+UP2+B100 => B6
+  step  69: 40179 -> 40150  B1+WORD2+COL990 => B990&F0
+  step  72: 40150 -> 39056  mixer select => B6
+  step  75: 39056 -> 39012  B990&F0 => ORD2+B8
+  step  76: 39012 -> 38933  correction => B99&C0
+  step  99: 38933 -> 38604  ORD5+B615&0F+B616&F0 => LINECOL+COL8/3
+  step 100: 38604 -> 38526  GRAD(3,1980) => GRAD(3,1980)+ORD3
+  step 101: 38526 -> 38325  ORD2 => COL4950+B198+B7&FC
+  step 109: 38325 -> 37507  COL4950+B198 => GRAD(4,2)&E0+B198
+  step 118: 37507 -> 37485  GRAD(3,1980)+ORD3 => GRAD(3,1980)+ORD3/7
+  step 120: 37485 -> 37015  ORD6 => GRAD(4,2)&E0+B198+B693
+  step 125: 37015 -> 36849  B6 => B7&DF+B990+B99
+  step 132: 36849 -> 36243  B7&DF+B990 => B7&DF+B990+B4950
+search: 144 evaluations, 46.1 s
+program : (none)
+contexts: ORD1/5 COL4950+B198+B7&FC ORD3 B7&DF+B990+B99 UP0+B990 GRAD(4,2)&E0+B198+B693 LINECOL/3 GRAD(4,2)&E0+B198 LINECOL+COL8/3 ORD2+AVG(2,3)&C0+UP2 B7&DF+B990+B4950 B4950+COL99 ORD2+B8 GRAD(3,1980)+ORD3/7
+mixer select: B6   correction: B99&C0   match length: 3
+2253751 -> 267898 bytes (0.951 bits/byte), 51.0 s

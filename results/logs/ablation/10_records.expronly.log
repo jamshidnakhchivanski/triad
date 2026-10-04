@@ -1,0 +1,44 @@
+sample: 262144 bytes; repeat distances: 16 5679 5791 7407 3615 3599
+  no program: 56003 bytes on the sample
+  step   0: 56003 -> 53499  ORD0 => ORD1+B5791
+  step   3: 53499 -> 50143  ORD4 => AVG(3,16)&E0
+  step   7: 50143 -> 48748  ORD8 => COL2
+  step   9: 48748 -> 35955  AVG(3,16)&E0 => B2+B3+B3616
+  step  10: 35955 -> 35781  match length => 5
+  step  13: 35781 -> 34280  ORD6 => ORD2+B6&DF
+  step  18: 34280 -> 33712  ORD2+B6&DF => COL2+B4&FC
+  step  23: 33712 -> 32834  ORD5 => B3599
+  step  27: 32834 -> 32808  WORD+WORD2 => WORD+WORD2+UP2
+  step  28: 32808 -> 32652  B2+B3 => B2+B3/10
+  step  32: 32652 -> 31827  COL2 => B3599+B11358
+  step  34: 31827 -> 31770  ORD12 => GRAD(3,11358)
+  step  35: 31770 -> 31538  B2+B3/10 => B3/10
+  step  40: 31538 -> 31454  mixer select => B1+AVG(4,2)&C0
+  step  41: 31454 -> 31058  B1+B3 => B7&DF+B5679
+  step  43: 31058 -> 31013  WORD => WORD+B5791
+  step  51: 31013 -> 30990  B3599 => UP0+B5679
+  step  53: 30990 -> 29902  WORD+B5791 => COL16+B5791
+  step  54: 29902 -> 28616  ORD1 => COL16+B5791+B16&80
+  step  57: 28616 -> 28492  B7&DF+B5679 => B7&DF
+  step  68: 28492 -> 20226  ORD2 => ORD2+B16
+  step  71: 20226 -> 19815  COL16+B5791+B16&80 => COL2+B4&FC+B3600
+  step  73: 19815 -> 19195  B1+WORD2 => ORD2+B16+B8
+  step  74: 19195 -> 19037  correction => B3615&C0
+  step  85: 19037 -> 18902  ORD1+B5791 => COL2+B4&FC+B3600+B1
+  step  90: 18902 -> 18893  WORD+WORD2+UP2 => AVG(3,5680)
+  step  96: 18893 -> 18854  AVG(3,5680) => B3599+B11358+COL8
+  step 100: 18854 -> 18753  ORD2+B16 => GRAD(2,3)&C0+B16
+  step 113: 18753 -> 18723  match length => 16
+  step 117: 18723 -> 18606  COL2+B4&FC => COL16+B5791+B7407
+  step 118: 18606 -> 18542  COL2+B4&FC+B3600 => COL2+B3600
+  step 121: 18542 -> 18533  B3599+B11358+COL8 => COL16+B5791+COL8
+  step 130: 18533 -> 17778  B7&DF => B7&DF+B16
+  step 140: 17778 -> 17743  B3599+B11358 => B3599+B11358+B6
+  prune GRAD(3,11358): 17743 -> 17723
+  prune COL16+B5791+COL8: 17723 -> 17715
+  prune UP0+B5679: 17715 -> 17702
+search: 143 evaluations, 52.3 s
+program : (none)
+contexts: COL2+B3600 GRAD(2,3)&C0+B16 ORD3 B2+B3+B3616 COL16+B5791+B7407 B3599+B11358+B6 COL16+B5791 B3/10 B7&DF+B16 COL2+B4&FC+B3600+B1 ORD2+B16+B8
+mixer select: B1+AVG(4,2)&C0   correction: B3615&C0   match length: 16
+1600000 -> 98505 bytes (0.493 bits/byte), 55.9 s

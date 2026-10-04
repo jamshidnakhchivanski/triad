@@ -1,0 +1,4 @@
+program : (none)
+contexts: ORD1 ORD2 ORD3 ORD4 ORD5 ORD6 ORD8 WORD WORD+WORD2 B2+B3 B1+B3 ORD0 B1+WORD2 ORD12
+mixer select: B1   correction: ORD2   match length: 6
+41458703 -> 5828347 bytes (1.125 bits/byte), 74.0 s

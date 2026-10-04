@@ -1,0 +1,81 @@
+file,method,orig,size,ctime,dtime,roundtrip
+01_quad,TRIAD -1 (no search),1600000,584066,6.82,6.41,ok
+01_quad,TRIAD -2 -G (program search only),1600000,1501,7.37,2.77,ok
+01_quad,TRIAD -2 -P (expression search only),1600000,34288,57.49,4.42,ok
+01_quad,TRIAD -2 (both),1600000,783,55.78,2.54,ok
+02_arith_rnd,TRIAD -1 (no search),1600000,459069,9.33,9.36,ok
+02_arith_rnd,TRIAD -2 -G (program search only),1600000,441553,14.60,8.71,ok
+02_arith_rnd,TRIAD -2 -P (expression search only),1600000,428869,154.11,6.76,ok
+02_arith_rnd,TRIAD -2 (both),1600000,439282,69.88,1.95,ok
+03_json,TRIAD -1 (no search),2976648,166681,5.37,5.24,ok
+03_json,TRIAD -2 -G (program search only),2976648,166681,6.31,6.06,ok
+03_json,TRIAD -2 -P (expression search only),2976648,153957,110.29,9.54,ok
+03_json,TRIAD -2 (both),2976648,153957,50.44,4.27,ok
+04_repeat,TRIAD -1 (no search),2000070,1259,3.46,3.48,ok
+04_repeat,TRIAD -2 -G (program search only),2000070,1259,5.01,3.93,ok
+04_repeat,TRIAD -2 -P (expression search only),2000070,1349,49.59,5.68,ok
+04_repeat,TRIAD -2 (both),2000070,1349,42.93,2.53,ok
+07_source,TRIAD -1 (no search),3006237,449413,5.97,5.98,ok
+07_source,TRIAD -2 -G (program search only),3006237,449413,14.89,9.83,ok
+07_source,TRIAD -2 -P (expression search only),3006237,438455,70.99,6.38,ok
+07_source,TRIAD -2 (both),3006237,438455,55.01,5.80,ok
+08_quad_text,TRIAD -1 (no search),2253751,584842,4.54,4.62,ok
+08_quad_text,TRIAD -2 -G (program search only),2253751,584842,5.55,5.00,ok
+08_quad_text,TRIAD -2 -P (expression search only),2253751,267898,79.47,9.26,ok
+08_quad_text,TRIAD -2 (both),2253751,267898,44.84,4.05,ok
+09_csv,TRIAD -1 (no search),1307565,111817,2.88,2.96,ok
+09_csv,TRIAD -2 -G (program search only),1307565,111817,11.21,6.46,ok
+09_csv,TRIAD -2 -P (expression search only),1307565,100602,108.59,5.35,ok
+09_csv,TRIAD -2 (both),1307565,100602,48.30,2.44,ok
+10_records,TRIAD -1 (no search),1600000,316894,4.33,4.34,ok
+10_records,TRIAD -2 -G (program search only),1600000,121027,7.27,3.22,ok
+10_records,TRIAD -2 -P (expression search only),1600000,98505,56.08,3.55,ok
+10_records,TRIAD -2 (both),1600000,111602,51.46,2.60,ok
+dickens,TRIAD -1 (no search),10192446,2130708,22.34,22.84,ok
+dickens,TRIAD -2 -G (program search only),10192446,2130708,22.46,21.73,ok
+dickens,TRIAD -2 -P (expression search only),10192446,2100016,80.19,21.10,ok
+dickens,TRIAD -2 (both),10192446,2100016,85.85,22.18,ok
+mozilla,TRIAD -1 (no search),51220480,12924986,94.90,97.12,ok
+mozilla,TRIAD -2 -G (program search only),51220480,12924986,104.96,106.53,ok
+mozilla,TRIAD -2 -P (expression search only),51220480,11838940,147.61,93.10,ok
+mozilla,TRIAD -2 (both),51220480,11838940,132.88,85.78,ok
+mr,TRIAD -1 (no search),9970564,2170067,18.27,18.62,ok
+mr,TRIAD -2 -G (program search only),9970564,2018126,20.36,16.85,ok
+mr,TRIAD -2 -P (expression search only),9970564,2033133,62.82,14.66,ok
+mr,TRIAD -2 (both),9970564,1973871,66.08,13.79,ok
+nci,TRIAD -1 (no search),33553445,1355103,45.01,45.96,ok
+nci,TRIAD -2 -G (program search only),33553445,1355103,45.97,44.70,ok
+nci,TRIAD -2 -P (expression search only),33553445,1023378,92.50,48.90,ok
+nci,TRIAD -2 (both),33553445,1023378,93.47,50.21,ok
+ooffice,TRIAD -1 (no search),6152192,2151383,16.85,17.20,ok
+ooffice,TRIAD -2 -G (program search only),6152192,1813238,15.27,14.41,ok
+ooffice,TRIAD -2 -P (expression search only),6152192,2054114,70.88,13.09,ok
+ooffice,TRIAD -2 (both),6152192,1755214,79.17,14.10,ok
+osdb,TRIAD -1 (no search),10085684,2267438,26.36,27.27,ok
+osdb,TRIAD -2 -G (program search only),10085684,2267438,24.08,23.39,ok
+osdb,TRIAD -2 -P (expression search only),10085684,2189632,81.33,20.64,ok
+osdb,TRIAD -2 (both),10085684,2189632,90.67,21.82,ok
+reymont,TRIAD -1 (no search),6627202,965514,14.49,14.10,ok
+reymont,TRIAD -2 -G (program search only),6627202,965514,13.97,13.43,ok
+reymont,TRIAD -2 -P (expression search only),6627202,935982,68.47,13.98,ok
+reymont,TRIAD -2 (both),6627202,935982,72.99,14.31,ok
+samba,TRIAD -1 (no search),21606400,3139078,41.86,42.48,ok
+samba,TRIAD -2 -G (program search only),21606400,3139078,40.30,40.08,ok
+samba,TRIAD -2 -P (expression search only),21606400,3158899,87.08,38.51,ok
+samba,TRIAD -2 (both),21606400,3158899,91.83,41.50,ok
+sao,TRIAD -1 (no search),7251944,4413000,21.96,22.39,ok
+sao,TRIAD -2 -G (program search only),7251944,4413000,22.08,19.95,ok
+sao,TRIAD -2 -P (expression search only),7251944,3943522,90.05,14.40,ok
+sao,TRIAD -2 (both),7251944,3943522,105.54,15.90,ok
+webster,TRIAD -1 (no search),41458703,5828347,74.26,80.04,ok
+webster,TRIAD -2 -G (program search only),41458703,5828347,82.07,81.07,ok
+webster,TRIAD -2 -P (expression search only),41458703,5735546,128.53,79.05,ok
+webster,TRIAD -2 (both),41458703,5735546,115.92,73.75,ok
+x-ray,TRIAD -1 (no search),8474240,3669597,23.11,23.33,ok
+x-ray,TRIAD -2 -G (program search only),8474240,3656548,22.76,19.23,ok
+x-ray,TRIAD -2 -P (expression search only),8474240,3565169,75.67,16.57,ok
+x-ray,TRIAD -2 (both),8474240,3619394,87.00,18.51,ok
+xml,TRIAD -1 (no search),5345280,325369,10.05,10.02,ok
+xml,TRIAD -2 -G (program search only),5345280,325369,10.45,10.17,ok
+xml,TRIAD -2 -P (expression search only),5345280,319199,56.67,8.77,ok
+xml,TRIAD -2 (both),5345280,319199,58.82,9.11,ok

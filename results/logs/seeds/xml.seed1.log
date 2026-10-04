@@ -1,0 +1,19 @@
+sample: 262144 bytes; repeat distances: 1160 10 1159 1162 1161 1163
+  no program: 20318 bytes on the sample
+  step   5: 20318 -> 20192  match length => 24
+  step  26: 20192 -> 20171  B2+B3 => WORD+WORD2+B3
+  step  35: 20171 -> 20139  ORD3 => ORD3/3
+  step  40: 20139 -> 20114  B1+B3 => WORD+WORD2+B5
+  step  44: 20114 -> 20093  ORD8 => ORD8+UP0
+  step  51: 20093 -> 20063  ORD2 => ORD2/3
+  step  70: 20063 -> 20043  WORD+WORD2+B3 => B1160
+  step 100: 20043 -> 20023  B1160 => GRAD(1,1164)&E0
+  step 102: 20023 -> 20003  WORD => WORD/3
+  step 118: 20003 -> 19987  GRAD(1,1164)&E0 => WORD
+  step 145: 19987 -> 19980  ORD0 => ORD0/3
+  prune ORD5: 19980 -> 19956
+search: 130 evaluations, 45.7 s
+program : (none)
+contexts: ORD1 ORD2/3 ORD3/3 ORD4 ORD6 ORD8+UP0 WORD/3 WORD+WORD2 WORD WORD+WORD2+B5 ORD0/3 B1+WORD2 ORD12
+mixer select: B1   correction: ORD2   match length: 24
+5345280 -> 317781 bytes (0.476 bits/byte), 55.2 s

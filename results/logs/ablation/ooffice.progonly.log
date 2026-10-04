@@ -1,0 +1,8 @@
+sample: 262144 bytes; repeat distances: 48 16 7 6 17 5
+  no program: 84808 bytes on the sample
+  try X86: 73880
+search: 2 evaluations, 1.4 s
+program : X86
+contexts: ORD1 ORD2 ORD3 ORD4 ORD5 ORD6 ORD8 WORD WORD+WORD2 B2+B3 B1+B3 ORD0 B1+WORD2 ORD12
+mixer select: B1   correction: ORD2   match length: 6
+6152192 -> 1813238 bytes (2.358 bits/byte), 15.2 s

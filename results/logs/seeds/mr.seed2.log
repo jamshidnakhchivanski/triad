@@ -1,0 +1,39 @@
+sample: 262144 bytes; repeat distances: 1024 1022 1026 2050 2046 1020
+  no program: 56447 bytes on the sample
+  try DELTA(1-byte LE, offset 0, stride 2): 58420
+  try DELTA(2-byte LE, offset 1, stride 1): 58550
+  try DELTA(2-byte BE, offset 0, stride 1): 58481
+  try DELTA(1-byte LE, offset 0, stride 1024): 55920
+  try DELTA(1-byte LE, offset 0, stride 2): 56918
+  try DELTA(2-byte BE, offset 0, stride 1): 57034
+  try DELTA(2-byte LE, offset 1, stride 1): 57074
+  step   0: 55920 -> 55883  B1+B3 => B3
+  step   1: 55883 -> 55831  WORD => WORD+AVG(4,6)
+  step   2: 55831 -> 55799  ORD8 => WORD+AVG(4,6)+GRAD(4,1)&E0
+  step   5: 55799 -> 55745  WORD+AVG(4,6)+GRAD(4,1)&E0 => WORD+AVG(2,8)&F0+GRAD(4,1)&E0
+  step   9: 55745 -> 55349  B1+WORD2 => GRAD(2,2057)+B2+B4
+  step  15: 55349 -> 55309  ORD12 => ORD3+COL1022
+  step  19: 55309 -> 55208  WORD+AVG(4,6) => AVG(4,6)
+  step  29: 55208 -> 55162  mixer select => B1+B5
+  step  30: 55162 -> 55105  match length => 3
+  step  31: 55105 -> 55086  WORD+WORD2 => WORD2
+  step  34: 55086 -> 54984  AVG(4,6) => AVG(4,6)+COL2
+  step  39: 54984 -> 54935  WORD+AVG(2,8)&F0+GRAD(4,1)&E0 => WORD+AVG(2,8)&F0+GRAD(4,1)&E0+B8
+  step  54: 54935 -> 54840  AVG(4,6)+COL2 => COL2
+  step  55: 54840 -> 54799  ORD0 => B6
+  step  56: 54799 -> 54714  B2+B3 => B2
+  step  83: 54714 -> 54661  WORD2 => B2+B8
+  step  89: 54661 -> 54640  B3 => B3&E0+COL8+B12
+  step  96: 54640 -> 54623  match length => 4
+  step 130: 54623 -> 54291  ORD1 => B1022&FC
+  step 131: 54291 -> 54271  B2 => B2+B8+GRAD(4,2)
+  step 146: 54271 -> 54244  WORD+AVG(2,8)&F0+GRAD(4,1)&E0+B8 => B8+AVG(2,8)&F0+GRAD(4,1)&E0
+  prune ORD3+COL1022: 54244 -> 54242
+  prune B6: 54242 -> 54258
+  prune ORD5: 54242 -> 54223
+  prune ORD3: 54223 -> 54219
+search: 147 evaluations, 56.5 s
+program : DELTA(1-byte LE, offset 0, stride 1024)
+contexts: B1022&FC ORD2 ORD4 ORD6 B8+AVG(2,8)&F0+GRAD(4,1)&E0 COL2 B2+B8 B2+B8+GRAD(4,2) B3&E0+COL8+B12 GRAD(2,2057)+B2+B4
+mixer select: B1+B5   correction: ORD2   match length: 4
+9970564 -> 1981004 bytes (1.589 bits/byte), 69.7 s

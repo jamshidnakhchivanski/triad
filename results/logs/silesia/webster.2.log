@@ -1,0 +1,12 @@
+sample: 262144 bytes; repeat distances: 11 15 14 10 5 24
+  no program: 57807 bytes on the sample
+  step   8: 57807 -> 57737  B2+B3 => ORD1+AVG(2,3)&C0+UP2
+  step  10: 57737 -> 57698  match length => 5
+  step  48: 57698 -> 57654  ORD1 => ORD1/5
+  step  49: 57654 -> 56978  ORD8 => LINECOL
+  step 128: 56978 -> 56951  ORD2 => ORD2/3
+search: 128 evaluations, 46.1 s
+program : (none)
+contexts: ORD1/5 ORD2/3 ORD3 ORD4 ORD5 ORD6 LINECOL WORD WORD+WORD2 ORD1+AVG(2,3)&C0+UP2 B1+B3 ORD0 B1+WORD2 ORD12
+mixer select: B1   correction: ORD2   match length: 5
+41458703 -> 5735546 bytes (1.107 bits/byte), 115.7 s

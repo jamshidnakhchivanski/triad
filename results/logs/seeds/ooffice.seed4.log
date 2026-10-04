@@ -1,0 +1,25 @@
+sample: 262144 bytes; repeat distances: 48 16 7 6 17 5
+  no program: 84808 bytes on the sample
+  try X86: 73880
+  step   3: 73880 -> 73264  ORD8 => B7+B2+B2
+  step   9: 73264 -> 73136  WORD+WORD2 => WORD+WORD2/7
+  step  17: 73136 -> 73045  ORD0 => ORD0/10
+  step  18: 73045 -> 72782  B1+WORD2 => B1+B8
+  step  39: 72782 -> 72523  B2+B3 => B2+B3/3
+  step  53: 72523 -> 72214  ORD1 => ORD1/7
+  step  56: 72214 -> 72187  WORD => GRAD(2,6)&C0
+  step  59: 72187 -> 72145  ORD2 => ORD2/5
+  step  60: 72145 -> 71998  ORD0/10 => ORD0/3
+  step  71: 71998 -> 71914  GRAD(2,6)&C0 => B8&DF
+  step  74: 71914 -> 71781  match length => 4
+  step  76: 71781 -> 71310  ORD4 => GRAD(2,5)/3
+  step  88: 71310 -> 71209  B1+B8 => B1+B8+B5&80
+  step  90: 71209 -> 70480  B8&DF => B16/3
+  step  92: 70480 -> 70368  B7+B2+B2 => B2+B2
+  step 117: 70368 -> 70305  B1+B8+B5&80 => B1+B8+B5&80/3
+  prune ORD12: 70305 -> 70315
+search: 141 evaluations, 68.5 s
+program : X86
+contexts: ORD1/7 ORD2/5 ORD3 GRAD(2,5)/3 ORD5 ORD6 B2+B2 B16/3 WORD+WORD2/7 B2+B3/3 B1+B3 ORD0/3 B1+B8+B5&80/3
+mixer select: B1   correction: ORD2   match length: 4
+6152192 -> 1761471 bytes (2.291 bits/byte), 81.3 s

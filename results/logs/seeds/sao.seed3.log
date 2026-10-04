@@ -1,0 +1,30 @@
+sample: 262144 bytes; repeat distances: 28 8112 8056 1667 771 211
+  no program: 170402 bytes on the sample
+  try DELTA(4-byte LE, offset 3, stride 7): 188191
+  try DELTA(1-byte LE, offset 0, stride 28): 190514
+  try DELTA(2-byte LE, offset 1, stride 14): 190613
+  try DELTA(2-byte BE, offset 0, stride 14): 193014
+  step  10: 170402 -> 169801  ORD0 => B8056&FC+GRAD(1,16112)+COL4
+  step  12: 169801 -> 169279  WORD+WORD2 => WORD+B7&0F
+  step  19: 169279 -> 169217  B8056&FC+GRAD(1,16112)+COL4 => B8056&FC+GRAD(1,16112)+COL4/3
+  step  26: 169217 -> 166592  correction => COL8
+  step  32: 166592 -> 162497  ORD5 => B772
+  step  64: 162497 -> 159538  B1+B3 => B8
+  step  65: 159538 -> 158882  ORD4 => B1667&C0
+  step  67: 158882 -> 158100  B8 => B8+B7
+  step  72: 158100 -> 157961  WORD => WORD+B16223
+  step  79: 157961 -> 157515  ORD8 => B57
+  step  93: 157515 -> 156129  mixer select => COL4
+  step  96: 156129 -> 156000  WORD+B7&0F => B7&0F
+  step  99: 156000 -> 155886  B772 => B772/3
+  step 101: 155886 -> 155349  WORD+B16223 => B16223
+  step 116: 155349 -> 150014  B16223 => COL28
+  step 136: 150014 -> 149657  B1667&C0 => ORD1+COL4
+  prune ORD12: 149657 -> 149661
+  prune B1+WORD2: 149657 -> 149685
+  prune B8056&FC+GRAD(1,16112)+COL4/3: 149657 -> 149693
+search: 138 evaluations, 68.0 s
+program : (none)
+contexts: ORD1 ORD2 ORD3 ORD1+COL4 B772/3 ORD6 B57 COL28 B7&0F B2+B3 B8+B7
+mixer select: COL4   correction: COL8   match length: 6
+7251944 -> 3961272 bytes (4.370 bits/byte), 82.5 s

@@ -1,0 +1,49 @@
+sample: 262144 bytes; repeat distances: 216 15 223 9 8 41
+  no program: 16765 bytes on the sample
+  step   1: 16765 -> 16345  ORD2 => B1+B3+WORD2
+  step   7: 16345 -> 16337  ORD8 => COL2
+  step   9: 16337 -> 15915  ORD4 => B2+B3+B9
+  step  13: 15915 -> 15715  ORD6 => B1+B3+WORD2+B6&DF
+  step  27: 15715 -> 15693  WORD+WORD2 => WORD+WORD2+UP2
+  step  29: 15693 -> 15653  WORD+WORD2+UP2 => WORD+B3&FC+WORD2
+  step  32: 15653 -> 15600  COL2 => ORD5+B30
+  step  35: 15600 -> 15594  B2+B3 => B3
+  step  36: 15594 -> 15583  B1+B3 => B1
+  step  40: 15583 -> 15194  B1+WORD2 => B1+WORD2+B8
+  step  41: 15194 -> 15177  mixer select => B1+AVG(4,2)&C0
+  step  42: 15177 -> 15168  B1 => B7&DF+B15
+  step  46: 15168 -> 15160  ORD5+B30 => ORD5+B30/3
+  step  53: 15160 -> 15113  correction => B4&E0
+  step  54: 15113 -> 15088  B1+B3+WORD2+B6&DF => AVG(4,81)+ORD5
+  step  65: 15088 -> 15079  ORD12 => COL223
+  step  69: 15079 -> 15047  mixer select => B6
+  step  78: 15047 -> 15042  B1+B3+WORD2 => B1+WORD2
+  step  82: 15042 -> 14960  B2+B3+B9 => ORD24
+  step  97: 14960 -> 14947  B1+WORD2 => WORD+B7&FC
+  step  99: 14947 -> 14942  B7&DF+B15 => B7&DF+B15+WORD
+  step 119: 14942 -> 14937  AVG(4,81)+ORD5 => WORD+B9
+  step 131: 14937 -> 14929  WORD+B7&FC => WORD+AVG(2,5)
+  step 164: 14929 -> 14904  B7&DF+B15+WORD => B1+WORD2+B8+B4
+  step 173: 14904 -> 14897  B3 => B10
+  step 174: 14897 -> 14648  ORD5 => WORD+B9+UP0
+  step 178: 14648 -> 14591  WORD+AVG(2,5) => UP0+B7+B2
+  step 192: 14591 -> 14576  B10 => B10+AVG(4,1)
+  step 211: 14576 -> 14570  ORD24 => ORD24/3
+  step 247: 14570 -> 14563  B10+AVG(4,1) => B10+AVG(4,1)+AVG(3,4)
+  step 271: 14563 -> 14557  ORD5+B30/3 => ORD5+B30/5
+  step 274: 14557 -> 14448  WORD+B9+UP0 => WORD+B9+UP0+GRAD(3,5)&F0
+  step 281: 14448 -> 14444  match length => 7
+  step 289: 14444 -> 14438  B10+AVG(4,1)+AVG(3,4) => B10+AVG(4,1)+AVG(3,4)/3
+  step 343: 14438 -> 14428  UP0+B7+B2 => UP0+B7+B2+B9&0F
+  step 345: 14428 -> 14289  mixer select => B6+WORD2
+  step 475: 14289 -> 14276  COL223 => B8+B41&DF+WORD
+  step 478: 14276 -> 14256  B1+WORD2+B8+B4 => B6&C0+WORD2+B8+B4
+  step 509: 14256 -> 14240  mixer select => B2&80+WORD2
+  step 510: 14240 -> 14228  ORD24/3 => ORD24
+  prune B8+B41&DF+WORD: 14228 -> 14220
+  prune UP0+B7+B2+B9&0F: 14220 -> 14212
+search: 483 evaluations, 165.5 s
+program : (none)
+contexts: ORD1 ORD3 ORD24 WORD+B9+UP0+GRAD(3,5)&F0 WORD+B9 ORD5+B30/5 WORD WORD+B3&FC+WORD2 B10+AVG(4,1)+AVG(3,4)/3 B6&C0+WORD2+B8+B4 ORD0 B1+WORD2+B8
+mixer select: B2&80+WORD2   correction: B4&E0   match length: 7
+2976648 -> 146665 bytes (0.394 bits/byte), 170.6 s

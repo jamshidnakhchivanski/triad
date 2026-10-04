@@ -1,0 +1,17 @@
+sample: 262144 bytes; repeat distances: 1160 10 1159 1162 1161 1163
+  no program: 20318 bytes on the sample
+  step   1: 20318 -> 20243  match length => 32
+  step  17: 20243 -> 20235  ORD0 => ORD0/10
+  step  25: 20235 -> 20209  match length => 12
+  step  39: 20209 -> 20185  B2+B3 => B2+B3/3
+  step  49: 20185 -> 20132  ORD8 => ORD8+B20&C0
+  step  53: 20132 -> 20108  ORD1 => ORD1/7
+  step  59: 20108 -> 20087  ORD2 => ORD2/5
+  step  91: 20087 -> 20035  match length => 16
+  step 100: 20035 -> 20022  WORD => WORD/10
+  step 133: 20022 -> 19926  ORD6 => ORD6+ORD24
+search: 138 evaluations, 49.6 s
+program : (none)
+contexts: ORD1/7 ORD2/5 ORD3 ORD4 ORD5 ORD6+ORD24 ORD8+B20&C0 WORD/10 WORD+WORD2 B2+B3/3 B1+B3 ORD0/10 B1+WORD2 ORD12
+mixer select: B1   correction: ORD2   match length: 16
+5345280 -> 315450 bytes (0.472 bits/byte), 59.8 s

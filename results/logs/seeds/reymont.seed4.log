@@ -1,0 +1,28 @@
+sample: 262144 bytes; repeat distances: 7 5 12 19 18 32
+  no program: 42499 bytes on the sample
+  step   3: 42499 -> 42336  ORD8 => B12+B2+B2
+  step  10: 42336 -> 42293  B1+WORD2 => B1+ORD7
+  step  15: 42293 -> 42203  mixer select => B1+B3+ORD1
+  step  16: 42203 -> 42188  ORD4 => ORD4/10
+  step  17: 42188 -> 41784  ORD0 => ORD0/10
+  step  18: 41784 -> 41753  B1+ORD7 => B1+B8
+  step  19: 41753 -> 41548  B12+B2+B2 => B12+B2+B2+COL5
+  step  27: 41548 -> 41121  ORD1 => ORD1/5
+  step  38: 41121 -> 41019  WORD => WORD+UP0
+  step  41: 41019 -> 40982  match length => 7
+  step  42: 40982 -> 40660  B2+B3 => B2+B3/3
+  step  43: 40660 -> 40645  ORD4/10 => ORD4/5
+  step  52: 40645 -> 40570  correction => B7
+  step  60: 40570 -> 40518  WORD+UP0 => GRAD(2,6)&C0+UP0
+  step  63: 40518 -> 40404  ORD2 => ORD2/5
+  step  64: 40404 -> 40390  ORD0/10 => ORD0/3
+  step  73: 40390 -> 40327  B12+B2+B2+COL5 => ORD2
+  step  74: 40327 -> 40313  ORD2 => GRAD(2,6)&C0+UP0+B37
+  step  78: 40313 -> 40296  match length => 4
+  step  87: 40296 -> 40227  GRAD(2,6)&C0+UP0+B37 => B14+UP0+B37
+  step 114: 40227 -> 40147  B2+B3/3 => B2/3
+search: 135 evaluations, 51.1 s
+program : (none)
+contexts: ORD1/5 ORD2/5 ORD3 ORD4/5 ORD5 ORD6 B14+UP0+B37 GRAD(2,6)&C0+UP0 WORD+WORD2 B2/3 B1+B3 ORD0/3 B1+B8 ORD12
+mixer select: B1+B3+ORD1   correction: B7   match length: 4
+6627202 -> 922995 bytes (1.114 bits/byte), 63.8 s

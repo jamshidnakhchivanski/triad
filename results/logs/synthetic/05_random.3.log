@@ -1,0 +1,17 @@
+sample: 262144 bytes; repeat distances: 7418 2250 6008 5658 7425 4516
+  no program: 262320 bytes on the sample
+  prune ORD12: 262320 -> 262319
+  prune B1+WORD2: 262319 -> 262319
+  prune ORD0: 262319 -> 262319
+  prune B1+B3: 262319 -> 262319
+  prune B2+B3: 262319 -> 262319
+  prune WORD+WORD2: 262319 -> 262318
+  prune WORD: 262318 -> 262318
+  prune ORD8: 262318 -> 262317
+  prune ORD6: 262317 -> 262317
+  prune ORD5: 262317 -> 262317
+search: 482 evaluations, 292.1 s
+program : (none)
+contexts: ORD1 ORD2 ORD3 ORD4 ORD5 ORD6 ORD8 WORD WORD+WORD2 B2+B3 B1+B3 ORD0 B1+WORD2 ORD12
+mixer select: B1   correction: ORD2   match length: 6
+1000000 -> 1000017 bytes (8.000 bits/byte), 295.1 s

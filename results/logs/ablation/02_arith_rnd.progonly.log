@@ -1,0 +1,11 @@
+sample: 262144 bytes; repeat distances: 8 12 20 28 52 68
+  no program: 77451 bytes on the sample
+  try DELTA(2-byte LE, offset 0, stride 34): 73344
+  try DELTA(4-byte LE, offset 2, stride 17): 73345
+  try DELTA(2-byte LE, offset 0, stride 26): 73312
+  try DELTA(4-byte LE, offset 2, stride 13): 73314
+search: 5 evaluations, 3.0 s
+program : DELTA(2-byte LE, offset 0, stride 26)
+contexts: ORD1 ORD2 ORD3 ORD4 ORD5 ORD6 ORD8 WORD WORD+WORD2 B2+B3 B1+B3 ORD0 B1+WORD2 ORD12
+mixer select: B1   correction: ORD2   match length: 6
+1600000 -> 441553 bytes (2.208 bits/byte), 7.3 s

@@ -1,0 +1,35 @@
+sample: 262144 bytes; repeat distances: 1024 1022 1026 2050 2046 1020
+  no program: 56447 bytes on the sample
+  try DELTA(1-byte LE, offset 0, stride 2): 58420
+  try DELTA(2-byte LE, offset 1, stride 1): 58550
+  try DELTA(2-byte BE, offset 0, stride 1): 58481
+  try DELTA(1-byte LE, offset 0, stride 1024): 55920
+  try DELTA(1-byte LE, offset 0, stride 2): 56918
+  try DELTA(2-byte BE, offset 0, stride 1): 57034
+  try DELTA(2-byte LE, offset 1, stride 1): 57074
+  step   6: 55920 -> 55803  WORD+WORD2 => WORD+WORD2+COL2
+  step  19: 55803 -> 55774  ORD0 => ORD0/3
+  step  21: 55774 -> 55566  ORD0/3 => COL4/3
+  step  26: 55566 -> 55496  correction => COL8
+  step  30: 55496 -> 55344  WORD => B2+B3+GRAD(2,6)
+  step  53: 55344 -> 55295  ORD12 => WORD2
+  step  62: 55295 -> 55215  B2+B3 => AVG(2,1)&C0+B2056
+  step  79: 55215 -> 55189  ORD8 => AVG(2,1)&C0+B2056+AVG(2,7)
+  step  83: 55189 -> 55142  WORD+WORD2+COL2 => B1+WORD2+B2044
+  step  90: 55142 -> 55114  WORD2 => AVG(3,7)&E0
+  step  93: 55114 -> 55094  correction => ORD3+AVG(4,2)
+  step  95: 55094 -> 54892  mixer select => COL4
+  step 125: 54892 -> 54841  AVG(3,7)&E0 => COL14
+  step 130: 54841 -> 54793  B1+WORD2+B2044 => B2044+WORD2
+  step 134: 54793 -> 54764  AVG(2,1)&C0+B2056 => AVG(2,1)&C0+COL10
+  step 149: 54764 -> 54709  match length => 5
+  prune COL14: 54709 -> 54712
+  prune B1+WORD2: 54709 -> 54701
+  prune B1+B3: 54701 -> 54699
+  prune ORD5: 54699 -> 54690
+  prune ORD3: 54690 -> 54688
+search: 146 evaluations, 53.3 s
+program : DELTA(1-byte LE, offset 0, stride 1024)
+contexts: ORD1 ORD2 ORD4 ORD6 AVG(2,1)&C0+B2056+AVG(2,7) B2+B3+GRAD(2,6) B2044+WORD2 AVG(2,1)&C0+COL10 COL4/3
+mixer select: COL4   correction: ORD3+AVG(4,2)   match length: 5
+9970564 -> 2005683 bytes (1.609 bits/byte), 66.5 s

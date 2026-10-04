@@ -1,0 +1,8 @@
+# /triad
+# /tests/tmp/
+# /tests/x86_fuzz
+# /bench/corpus/
+# /bench/synthetic/
+# /bench/work/
+*.trd
+__pycache__/

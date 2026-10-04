@@ -1,0 +1,46 @@
+sample: 262144 bytes; repeat distances: 1024 1022 1026 2050 2046 1020
+  no program: 56447 bytes on the sample
+  try DELTA(1-byte LE, offset 0, stride 2): 58420
+  try DELTA(2-byte LE, offset 1, stride 1): 58550
+  try DELTA(2-byte BE, offset 0, stride 1): 58481
+  try DELTA(1-byte LE, offset 0, stride 1024): 55920
+  try DELTA(1-byte LE, offset 0, stride 2): 56918
+  try DELTA(2-byte BE, offset 0, stride 1): 57034
+  try DELTA(2-byte LE, offset 1, stride 1): 57074
+  step   7: 55920 -> 55351  ORD8 => COL2
+  step  10: 55351 -> 55312  match length => 5
+  step  33: 55312 -> 55270  WORD+WORD2 => COL6+B1027&0F+B1028&F0
+  step  44: 55270 -> 55252  WORD => WORD+B8
+  step  46: 55252 -> 55202  COL2 => COL2/3
+  step  48: 55202 -> 55185  ORD1 => ORD1/5
+  step  53: 55185 -> 55166  correction => B4&E0
+  step  56: 55166 -> 55126  WORD+B8 => B8
+  step  59: 55126 -> 54660  ORD0 => B1022+COL14
+  step  63: 54660 -> 54633  B1+WORD2 => ORD1+WORD/5
+  step  66: 54633 -> 54609  ORD12 => COL8
+  step  67: 54609 -> 54589  ORD1+WORD/5 => B6&F0/5
+  step  68: 54589 -> 54271  ORD2 => ORD2+B1022
+  step  92: 54271 -> 54254  B8 => ORD4+B8
+  step 108: 54254 -> 54215  ORD4+B8 => GRAD(4,2)&E0+B8
+  step 141: 54215 -> 54144  correction => B4&E0+ORD3
+  step 161: 54144 -> 54114  COL8 => COL2+AVG(1,1029)&E0/3
+  step 162: 54114 -> 54085  B1+B3 => B6&F0+B4/5
+  step 190: 54085 -> 54019  B2+B3 => B2+B3+AVG(4,1)
+  step 193: 54019 -> 53978  B1022+COL14 => B1022
+  step 196: 53978 -> 53948  B6&F0+B4/5 => B12+B1&E0/5
+  step 215: 53948 -> 53909  B6&F0/5 => GRAD(3,2)/5
+  step 297: 53909 -> 53863  B2+B3+AVG(4,1) => B2+COL8+AVG(4,1)
+  step 396: 53863 -> 53827  B12+B1&E0/5 => B12+B1&E0+B2/5
+  step 414: 53827 -> 53810  match length => 3
+  step 426: 53810 -> 53779  mixer select => COL10
+  step 476: 53779 -> 53735  B12+B1&E0+B2/5 => B6&C0+B1&E0+B2/5
+  step 513: 53735 -> 53707  GRAD(4,2)&E0+B8 => GRAD(4,2)&E0
+  step 546: 53707 -> 53659  COL2+AVG(1,1029)&E0/3 => COL8+AVG(2,5)+B4&F0/3
+  step 575: 53659 -> 53639  B2+COL8+AVG(4,1) => B2+AVG(4,1)
+  prune GRAD(3,2)/5: 53639 -> 53633
+  prune ORD5: 53633 -> 53606
+search: 510 evaluations, 197.5 s
+program : DELTA(1-byte LE, offset 0, stride 1024)
+contexts: ORD1/5 ORD2+B1022 ORD3 ORD4 ORD6 COL2/3 GRAD(4,2)&E0 COL6+B1027&0F+B1028&F0 B2+AVG(4,1) B6&C0+B1&E0+B2/5 B1022 COL8+AVG(2,5)+B4&F0/3
+mixer select: COL10   correction: B4&E0+ORD3   match length: 3
+9970564 -> 1962422 bytes (1.575 bits/byte), 212.9 s

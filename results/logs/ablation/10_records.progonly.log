@@ -1,0 +1,16 @@
+sample: 262144 bytes; repeat distances: 16 5679 5791 7407 3615 3599
+  no program: 56003 bytes on the sample
+  try X86: 56908
+  try DELTA(1-byte LE, offset 0, stride 16): 21712
+  try DELTA(2-byte BE, offset 0, stride 8): 22095
+  try DELTA(2-byte LE, offset 1, stride 8): 20609
+  try DELTA(4-byte BE, offset 0, stride 4): 22170
+  try DELTA(2-byte LE, offset 1, stride 8): 28397
+  try DELTA(1-byte LE, offset 0, stride 16): 28999
+  try DELTA(2-byte BE, offset 0, stride 8): 29188
+  try DELTA(4-byte BE, offset 2, stride 4): 30149
+search: 10 evaluations, 4.1 s
+program : DELTA(2-byte LE, offset 1, stride 8)
+contexts: ORD1 ORD2 ORD3 ORD4 ORD5 ORD6 ORD8 WORD WORD+WORD2 B2+B3 B1+B3 ORD0 B1+WORD2 ORD12
+mixer select: B1   correction: ORD2   match length: 6
+1600000 -> 121027 bytes (0.605 bits/byte), 7.2 s

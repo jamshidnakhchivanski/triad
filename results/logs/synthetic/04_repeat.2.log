@@ -1,0 +1,27 @@
+sample: 262144 bytes; repeat distances: 313 141 172 105 208 418
+  no program: 423 bytes on the sample
+  try DELTA(1-byte LE, offset 0, stride 313): 913
+  step   2: 423 -> 414  ORD6 => ORD16
+  step   3: 414 -> 390  ORD4 => AVG(3,313)&E0
+  step   4: 390 -> 386  ORD3 => B2+B3+ORD12
+  step   7: 386 -> 364  ORD8 => COL2
+  step  20: 364 -> 354  match length => 32
+  step  21: 354 -> 354  B2+B3+ORD12 => B2+B3+ORD12+WORD2
+  step  27: 354 -> 348  WORD+WORD2 => WORD+WORD2+UP2
+  step  29: 348 -> 348  WORD+WORD2+UP2 => WORD+B3&FC+WORD2
+  step  32: 348 -> 344  COL2 => ORD5+B282
+  step  40: 344 -> 343  B1+WORD2 => B1+WORD2+B8
+  step  42: 343 -> 343  B1+B3 => B7&DF+B141
+  step  52: 343 -> 343  correction => B2+B141+B105&F0
+  step 102: 343 -> 342  B7&DF+B141 => B7&DF+B141+WORD
+  step 123: 342 -> 342  B7&DF+B141+WORD => B7&DF+B141+WORD+UP1
+  prune ORD12: 342 -> 342
+  prune B1+WORD2+B8: 342 -> 341
+  prune B7&DF+B141+WORD+UP1: 341 -> 341
+  prune WORD+B3&FC+WORD2: 341 -> 318
+  prune ORD5+B282: 318 -> 318
+search: 135 evaluations, 40.3 s
+program : (none)
+contexts: ORD1 ORD2 B2+B3+ORD12+WORD2 AVG(3,313)&E0 ORD5 ORD16 WORD B2+B3 ORD0
+mixer select: B1   correction: B2+B141+B105&F0   match length: 32
+2000070 -> 1349 bytes (0.005 bits/byte), 42.8 s
