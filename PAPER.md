@@ -2,7 +2,7 @@
 
 *A procedural, functional and iterative design*
 
-**Author:** *Jamshid Nakkhchivanski* · October 2026 · Source code: `[src/triad.c](src/triad.c)`
+**Author:** *Jamshid Nakhchivanski* · October 2026 · Source code: `[src/triad.c](src/triad.c)`
 
 ---
 
